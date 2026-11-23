@@ -1,0 +1,4 @@
+# ELIG_DAILY_LOAD at 02:00 every day. Install with:  crontab -e  (paste the line)
+# The same contract applies in Control-M / Broadcom Workload Automation:
+#   the scheduler runs scripts/run_job.sh and alerts on any exit code other than 0.
+0 2 * * * cd /home/ubuntu/batch && . scripts/env.sh >/dev/null && bash scripts/run_job.sh >> logs/cron.log 2>&1
